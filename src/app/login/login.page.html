@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <div class="center">
+          <ion-col col-4>
+            <img
+              src="https://adhivasindo.co.id/assets/personal/adhivasindo/assets/img/logo.png"
+              alt="logo"
+            />
+          </ion-col>
+        </div>
+      </ion-row>
+    </ion-card-content>
+
+    <form class="theme-form" [formGroup]="loginForm">
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input
+            name="username"
+            placeholder="Enter text"
+            formControlName="username"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            name="password"
+            type="password"
+            placeholder="Enter text"
+            formControlName="password"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button type="submit" (click)="login()" expand="full">Login</ion-button>
+      </ion-col>
+
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" fill="outline">Lupa Password</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="outline">Register</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
+</ion-content>
+
+<!-- [(ngModel)]="loginForm.username" -->.
+<!--   [(ngModel)]="loginForm.password" -->

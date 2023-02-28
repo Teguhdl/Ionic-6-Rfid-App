@@ -1,0 +1,6 @@
+{
+  "/login": {
+    "target": "http://localhost/rfid-api/index.php",
+    "secure": false
+  }
+}
