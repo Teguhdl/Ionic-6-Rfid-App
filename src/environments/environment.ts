@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   domainProd: 'http://bala.lan/',
   domainDev: 'http://bala.lan/',
-  domainLoc: 'http://localhost/rfid-api/',
+  domainLoc: 'http://192.168.150.32/rfid-api/',
   path: 'index.php/',
   auth: 'login',
   publicKey: '',

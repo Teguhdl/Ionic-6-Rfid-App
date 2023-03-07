@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./tabs/tabs.module').then((m) => m.TabsPageModule),
-      canActivate : [AuthGuard]
+    canActivate: [AuthGuard],
   },
   // {
   //   path: 'login',
@@ -15,7 +15,7 @@ const routes: Routes = [
   //     import('./login/login.module').then((m) => m.LoginPageModule),
   // },
   {
-    path: 'login',
+    path: '',
     redirectTo: 'login',
     pathMatch: 'full',
   },
@@ -28,6 +28,7 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardPageModule),
+    canActivate: [AuthGuard],
   },
 ];
 @NgModule({

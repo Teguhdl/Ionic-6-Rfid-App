@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>Login </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +13,7 @@
   <ion-card>
     <ion-card-content>
       <ion-row>
-        <div class="center">
+        <div class="centerimg">
           <ion-col col-4>
             <img
               src="https://adhivasindo.co.id/assets/personal/adhivasindo/assets/img/logo.png"
@@ -22,43 +24,59 @@
       </ion-row>
     </ion-card-content>
 
-    <form class="theme-form" [formGroup]="loginForm">
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Username</ion-label>
-          <ion-input
-            name="username"
-            placeholder="Enter text"
-            formControlName="username"
-          ></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input
-            name="password"
-            type="password"
-            placeholder="Enter text"
-            formControlName="password"
-          ></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-button type="submit" (click)="login()" expand="full">Login</ion-button>
-      </ion-col>
+    <form class="form" [formGroup]="loginForm">
+      <ion-row>
+        <ion-col>
+          <ion-item fill="solid">
+            <ion-label position="floating">Username</ion-label>
+            <ion-input
+              class="custom"
+              name="username"
+              placeholder="Enter text"
+              formControlName="username"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-button expand="block" fill="outline">Lupa Password</ion-button>
+          <ion-item fill="solid">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input
+              name="password"
+              type="password"
+              placeholder="Enter text"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" (click)="login()" expand="block"
+            >Login</ion-button
+          >
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="lastrow">
+        <ion-col>
+          <ion-button (click)="lupapassword()" expand="block" fill="outline"
+            >Lupa Password</ion-button
+          >
         </ion-col>
         <ion-col>
-          <ion-button expand="block" fill="outline">Register</ion-button>
+          <ion-button (click)="register()" expand="block" fill="outline"
+            >Register</ion-button
+          >
         </ion-col>
       </ion-row>
     </form>
   </ion-card>
 </ion-content>
 
+<ion-footer> </ion-footer>
 <!-- [(ngModel)]="loginForm.username" -->.
 <!--   [(ngModel)]="loginForm.password" -->
