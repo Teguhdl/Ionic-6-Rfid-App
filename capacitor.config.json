@@ -1,1 +1,9 @@
-{}
+{
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "cleartext": true,
+    "hostname": "localhost"
+  }
+}

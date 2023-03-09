@@ -28,17 +28,20 @@ export class Tab3Page {
     this.groupid = groupid?.replace(/"/g, '');
     this.userid = userid?.replace(/"/g, '');
     //console.log(username);
-    
-  
+    if (this.groupid == '0') {
+      this.groupid = 'Admin';
+    } else {
+      this.groupid = 'User';
+    }
   }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Konfirmasi Log Out',
-      mode: 'ios',
+      // mode: 'ios',
       subHeader: 'Apakah Anda yakin Ingin Logout?',
       buttons: [
         {
-          text: 'LogOut',
+          text: 'Log Out',
           role: 'destructive',
           handler: () => {
             this.navigatelogout();
@@ -58,6 +61,7 @@ export class Tab3Page {
   }
   navigatelogout() {
     //localStorage.removeItem('token'); -> item by item
+    sessionStorage.clear();
     localStorage.clear(); // sekali semua kehapus
     this.router.navigate(['login'], { replaceUrl: true });
   }

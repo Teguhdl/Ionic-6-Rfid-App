@@ -1,17 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="main_content">
+  <ion-buttons slot="start" class="button_menu">
+    <ion-menu-button color="light"> </ion-menu-button>
+  </ion-buttons>
+  <div class="content_name">
+    <ion-label slot="end">Content</ion-label>
+  </div>
+  <div class="sub_content">
+    <div class="user">
+      <ion-label class="label_big">List Perusahaan</ion-label>
+      <ion-label class="label_small"></ion-label>
+    </div>
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-title>Khusus Admin</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more,
+        nothing less.
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>

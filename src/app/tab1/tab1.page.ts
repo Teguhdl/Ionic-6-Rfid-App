@@ -10,12 +10,33 @@ import { Storage } from '@ionic/storage';
 })
 export class Tab1Page {
   result: string | undefined;
+  username: any;
+  groupid: any;
+  userid: any;
+  groupcardadmin: any;
   constructor(
     private actionSheetCtrl: ActionSheetController,
     public router: Router,
     private storage: Storage
-  ) {}
-  
+  ) {
+    let username = localStorage.getItem('username');
+    let userid = localStorage.getItem('userId');
+    let groupid = localStorage.getItem('groupId');
+    let token = localStorage.getItem('token');
+
+    this.username = username?.replace(/"/g, '');
+    this.groupid = groupid?.replace(/"/g, '');
+    this.userid = userid?.replace(/"/g, '');
+
+    if (this.groupid == '0') {
+      this.groupid = 'Admin';
+      this.groupcardadmin = true
+    } else {
+      this.groupid = 'User';
+      this.groupcardadmin = false
+    }
+  }
+
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Konfirmasi Log Out',
@@ -53,7 +74,7 @@ export class Tab1Page {
     //spaceBetween: 10,
     freeMode: true,
     // slidePerView: 3.5,
-     slideOffsetBefore: 11,
+    slideOffsetBefore: 11,
     // spaceBetween: 10,
     // loop: false,
   };

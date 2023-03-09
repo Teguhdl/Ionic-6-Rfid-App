@@ -4,16 +4,16 @@ import { map } from 'rxjs/operators';
 import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject, EMPTY } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable } from 'rxjs';
 
 let HeaderAuth = {
   headers: new HttpHeaders({
-    publickey: environment.publicKey,
+    //publickey: environment.publicKey,
   }),
 };
 let HeaderRequest = {
   headers: new HttpHeaders({
-    publickey: environment.publicKey,
+    // publickey: environment.publicKey,
     Authorization: JSON.parse(localStorage.getItem('token') || '{}'),
   }),
 };
@@ -26,6 +26,8 @@ export class ApiService {
   public mqtt;
   public fileName = '';
   public response: any;
+  private apiUrl = 'http://localhost/rfid-api/index.php';
+  private token2 = JSON.parse(localStorage.getItem('token') || '{}');
 
   public token = new BehaviorSubject<any>({});
   newtoken = this.token.asObservable();
@@ -46,6 +48,17 @@ export class ApiService {
       this.mqtt = environment.mqttServer;
       //sadasda
     }
+  }
+  getHeaders() {
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token2}`,
+    });
+  }
+  getData(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/device`, {
+      headers: this.getHeaders(),
+    });
   }
   async post(url: string, formData: any) {
     if (url === environment.auth) {

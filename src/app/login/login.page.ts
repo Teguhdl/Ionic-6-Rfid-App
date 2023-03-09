@@ -20,12 +20,12 @@ export class LoginPage implements OnInit {
   public errorMessage: any;
 
   constructor(
+    public api: ApiService,
+    public http: HttpClient,
+    public router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
-    public api: ApiService,
-    private alertController: AlertController,
-    public http: HttpClient,
-    public router: Router
+    private alertController: AlertController
   ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
@@ -39,12 +39,12 @@ export class LoginPage implements OnInit {
     formData.append('username', this.loginForm.value.username);
     formData.append('password', this.loginForm.value.password);
     const response = await this.api.post(environment.auth, formData);
-    // console.log(response);
+    // const response2 = await this.api.get(environment.device);
+    //console.log(response2);
 
     if (response.message == null) {
       const alert = await this.alertController.create({
         header: 'Alert',
-        mode: 'ios',
         subHeader: 'Gagal Login',
         message: 'Username & Password Salah Silahkan Coba Lagi',
         buttons: ['OK'],
@@ -59,11 +59,11 @@ export class LoginPage implements OnInit {
       localStorage.setItem('username', JSON.stringify(this.decode.usn));
       localStorage.setItem('groupId', JSON.stringify(this.decode.ugi));
       localStorage.setItem('userId', JSON.stringify(this.decode.uid));
+      
 
       let username = localStorage.getItem('username');
       const alert = await this.alertController.create({
         header: 'Login',
-        mode: 'ios',
         subHeader: 'Login Success',
         message: 'Selamat Datang ' + username,
         buttons: ['OK'],
@@ -76,7 +76,7 @@ export class LoginPage implements OnInit {
   async lupapassword() {
     const alert = await this.alertController.create({
       header: 'Alert',
-      mode: 'ios',
+      //mode: 'ios',
       subHeader: 'Belom Tersedia',
       message: 'Untuk Saat Ini Belum Tersedia',
       buttons: ['OK'],
@@ -88,7 +88,7 @@ export class LoginPage implements OnInit {
   async register() {
     const alert = await this.alertController.create({
       header: 'Alert',
-      mode: 'ios',
+      //mode: 'ios',
       subHeader: 'Belom Tersedia',
       message: 'Untuk Saat Ini Belum Tersedia',
       buttons: ['OK'],

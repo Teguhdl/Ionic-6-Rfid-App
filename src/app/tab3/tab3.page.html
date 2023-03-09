@@ -1,81 +1,62 @@
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar color="tertiary">
-      <ion-title>Menu Content</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-menu>
-
-<ion-content id="main-content">
-  <div class="main_content">
-    <ion-buttons slot="start" class="button_menu">
-      <ion-menu-button color="light"> </ion-menu-button>
-    </ion-buttons>
-
+<div class="main_content">
+  <ion-buttons slot="start" class="button_menu">
+    <ion-menu-button color="light"> </ion-menu-button>
+  </ion-buttons>
+  <div class="content_name">
+    <ion-label slot="end">Profile</ion-label>
+  </div>
+  <div class="sub_content">
     <div class="user">
-      <div class="user_1">
-        <ion-label class="username">Haiii, {{username}}</ion-label>
+      <div class="user_img">
+        <img src="../../assets/avatar.png" />
       </div>
-      <div class="userimg"><img src="" /></div>
-    </div>
-    <div class="content_2">
-      <div class="card">
-        <ion-grid fixed>
-          <!-- <ion-row>
-            <ion-col>
-              <div class="flex">
-                <div class="round">
-                  <img src="../../assets/icon/calender.png" />
-                </div>
-                <div class="detail"></div>
-              </div>
-            </ion-col>
-          </ion-row> -->
-          <ion-row>
-            <ion-col size="6">
-              <div class="flex">
-                <div class="round">
-                  <img src="../../assets/icon/userid.png" />
-                </div>
-                <div class="detail">
-                  <ion-label class="bold"> User ID </ion-label>
-                  <ion-label class="small"> ID : {{userid}} </ion-label>
-                </div>
-              </div>
-            </ion-col>
-            <ion-col size="6">
-              <div class="flex">
-                <div class="round">
-                  <img src="../../assets/icon/usergroup.png" />
-                </div>
-                <div class="detail">
-                  <ion-label class="bold">User Group </ion-label>
-                  <ion-label class="small"> {{groupid}} </ion-label>
-                </div>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-      <div class="list">
-        <ion-label>Edit Profile</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </div>
-      <div class="list">
-        <ion-label>Edit Profile</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </div>
-      <div class="list">
-        <ion-label>Edit Profile</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </div>
-      <div class="list">
-        <ion-label (click)="presentActionSheet()">Logout</ion-label>
-        <ion-icon
-          (click)="presentActionSheet()"
-          name="chevron-forward-outline"
-        ></ion-icon>
+      <div class="user_name">
+        <ion-label class="big_name">{{username}}</ion-label>
+        <ion-label class="small_name">Magang Prodev</ion-label>
       </div>
     </div>
   </div>
-</ion-content>
+  <div class="content">
+    <ion-item>
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <div>
+        <ion-label class="judul">Role</ion-label>
+        <div>
+          <ion-label class="text">{{groupid}}</ion-label>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="person"></ion-icon>
+      <div>
+        <ion-label class="judul">User Id</ion-label>
+        <div>
+          <ion-label class="text">{{userid}}</ion-label>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail"></ion-icon>
+      <div>
+        <ion-label class="judul">Email</ion-label>
+        <div>
+          <ion-label class="text">prodev@adhivasindo.com</ion-label>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="phone-portrait-outline"></ion-icon>
+      <div>
+        <ion-label class="judul">Phone</ion-label>
+        <div>
+          <ion-label class="text">081xxxxx</ion-label>
+        </div>
+      </div>
+    </ion-item>
+  </div>
+  <ion-card class="card">
+    <ion-item button>
+      <ion-label (click)="presentActionSheet()">Logout</ion-label>
+    </ion-item>
+  </ion-card>
+</div>

@@ -1,143 +1,35 @@
-<ion-app>
-  <ion-menu contentId="main-content">
-    <ion-header>
-      <ion-toolbar color="tertiary">
-        <ion-title>Menu Content</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-menu>
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button color="danger"></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Dashboard</ion-title>
-      <ion-buttons slot="end">
-        <ion-button color="primary">
-          <ion-text (click)="presentActionSheet()" class="logout"
-            >Logout</ion-text
-          >
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <div class="ion-page" id="main-content">
-      <div class="user">
-        <div class="name">
-          <ion-label></ion-label>
-        </div>
-      </div>
+<div class="main_content">
+  <ion-buttons slot="start" class="button_menu">
+    <ion-menu-button color="light"> </ion-menu-button>
+  </ion-buttons>
+  <div class="content_name">
+    <ion-label slot="end">Dashboard</ion-label>
+  </div>
+  <div class="sub_content">
+    <div class="user">
+      <ion-label class="label_big">Haiii,{{username}}</ion-label>
+      <ion-label class="label_small">Prodev Adhivasindo</ion-label>
     </div>
-    <ion-slides [options]="option" class="slides">
-      <ion-slide class="card-slide">
-        <ion-card>
-          <img
-            alt="Silhouette of mountains"
-            src="https://ionicframework.com/docs/img/demos/card-media.png"
-          />
-          <ion-card-header>
-            <ion-card-title>Card Title-1</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            <p>
-              Here's a small text description for the card content. Nothing
-              more, nothing less.
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide class="card-slide">
-        <ion-card>
-          <img
-            alt="Silhouette of mountains"
-            src="https://ionicframework.com/docs/img/demos/card-media.png"
-          />
-          <ion-card-header>
-            <ion-card-title>Card Title-2</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            <p>
-              Here's a small text description for the card content. Nothing
-              more, nothing less.
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide class="card-slide">
-        <ion-card>
-          <img
-            alt="Silhouette of mountains"
-            src="https://ionicframework.com/docs/img/demos/card-media.png"
-          />
-          <ion-card-header>
-            <ion-card-title>Card Title-3</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            <p>
-              Here's a small text description for the card content. Nothing
-              more, nothing less.
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide class="card-slide">
-        <ion-card>
-          <img
-            alt="Silhouette of mountains"
-            src="https://ionicframework.com/docs/img/demos/card-media.png"
-          />
-          <ion-card-header>
-            <ion-card-title>Card Title-4</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            <p>
-              Here's a small text description for the card content. Nothing
-              more, nothing less.
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-
-    <ion-card>
+    <ion-card class="card" *ngIf="groupcardadmin">
       <ion-card-header>
-        <ion-card-title>Card Title-5</ion-card-title>
+        <ion-card-title>Khusus Admin</ion-card-title>
         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-        <p>
-          Here's a small text description for the card content. Nothing more,
-          nothing less.
-        </p>
+        Here's a small text description for the card content. Nothing more,
+        nothing less.
       </ion-card-content>
     </ion-card>
-  </ion-content>
-</ion-app>
-<!-- 
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button color="primary">
-        <ion-text (click)="presentActionSheet()" class="logout"
-          >Logout</ion-text
-        >
-      </ion-button>
-    </ion-buttons>
-    <ion-title> Dashboard </ion-title>
-  </ion-toolbar>
-</ion-header> -->
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-title>Khusus user</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more,
+        nothing less.
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
