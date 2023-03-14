@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './service/auth.service';
+import { CommonModule } from '@angular/common';
+import { Tab2PageModule } from "../app/tab2/tab2.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +21,8 @@ import { AuthService } from './service/auth.service';
     AppRoutingModule,
     IonicStorageModule,
     HttpClientModule,
+    CommonModule,
+    Tab2PageModule
   ],
   providers: [
     AuthService,

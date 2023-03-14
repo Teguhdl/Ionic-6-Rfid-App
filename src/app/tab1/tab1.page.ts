@@ -30,10 +30,10 @@ export class Tab1Page {
 
     if (this.groupid == '0') {
       this.groupid = 'Admin';
-      this.groupcardadmin = true
+      this.groupcardadmin = true;
     } else {
       this.groupid = 'User';
-      this.groupcardadmin = false
+      this.groupcardadmin = false;
     }
   }
 
@@ -67,15 +67,8 @@ export class Tab1Page {
     localStorage.clear(); // sekali semua kehapus
     this.router.navigate(['login'], { replaceUrl: true });
   }
-  option = {
-    slidesPerView: 1.0,
-    centeredSlides: true,
-    loop: false,
-    //spaceBetween: 10,
-    freeMode: true,
-    // slidePerView: 3.5,
-    slideOffsetBefore: 11,
-    // spaceBetween: 10,
-    // loop: false,
-  };
+
+  add() {
+    this.router.navigate(['register'], { replaceUrl: true });
+  }
 }

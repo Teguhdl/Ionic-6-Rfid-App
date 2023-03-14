@@ -1,62 +1,66 @@
-<div class="main_content">
-  <ion-buttons slot="start" class="button_menu">
-    <ion-menu-button color="light"> </ion-menu-button>
-  </ion-buttons>
-  <div class="content_name">
-    <ion-label slot="end">Profile</ion-label>
-  </div>
-  <div class="sub_content">
-    <div class="user">
-      <div class="user_img">
-        <img src="../../assets/avatar.png" />
-      </div>
-      <div class="user_name">
-        <ion-label class="big_name">{{username}}</ion-label>
-        <ion-label class="small_name">Magang Prodev</ion-label>
+<ion-content>
+  <div class="main_content">
+    <ion-buttons slot="start" class="button_menu">
+      <ion-menu-button color="light"> </ion-menu-button>
+    </ion-buttons>
+    <div class="content_name">
+      <ion-label slot="end">Profile</ion-label>
+    </div>
+
+    <div class="sub_content">
+      <div class="user">
+        <div class="user_img">
+          <img src="../../assets/avatar.png" />
+        </div>
+        <div class="user_name">
+          <ion-label class="big_name">{{username}}</ion-label>
+          <ion-label class="small_name">Magang Prodev</ion-label>
+        </div>
       </div>
     </div>
+
+    <div class="content">
+      <ion-item>
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <div>
+          <ion-label class="judul">Role</ion-label>
+          <div>
+            <ion-label class="text">{{groupid}}</ion-label>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person"></ion-icon>
+        <div>
+          <ion-label class="judul">User Id</ion-label>
+          <div>
+            <ion-label class="text">{{userid}}</ion-label>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        <div>
+          <ion-label class="judul">Email</ion-label>
+          <div>
+            <ion-label class="text">prodev@adhivasindo.com</ion-label>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="phone-portrait-outline"></ion-icon>
+        <div>
+          <ion-label class="judul">Phone</ion-label>
+          <div>
+            <ion-label class="text">081xxxxx</ion-label>
+          </div>
+        </div>
+      </ion-item>
+    </div>
+    <ion-card class="card">
+      <ion-item button>
+        <ion-label (click)="presentActionSheet()">Logout</ion-label>
+      </ion-item>
+    </ion-card>
   </div>
-  <div class="content">
-    <ion-item>
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <div>
-        <ion-label class="judul">Role</ion-label>
-        <div>
-          <ion-label class="text">{{groupid}}</ion-label>
-        </div>
-      </div>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="person"></ion-icon>
-      <div>
-        <ion-label class="judul">User Id</ion-label>
-        <div>
-          <ion-label class="text">{{userid}}</ion-label>
-        </div>
-      </div>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="mail"></ion-icon>
-      <div>
-        <ion-label class="judul">Email</ion-label>
-        <div>
-          <ion-label class="text">prodev@adhivasindo.com</ion-label>
-        </div>
-      </div>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="phone-portrait-outline"></ion-icon>
-      <div>
-        <ion-label class="judul">Phone</ion-label>
-        <div>
-          <ion-label class="text">081xxxxx</ion-label>
-        </div>
-      </div>
-    </ion-item>
-  </div>
-  <ion-card class="card">
-    <ion-item button>
-      <ion-label (click)="presentActionSheet()">Logout</ion-label>
-    </ion-item>
-  </ion-card>
-</div>
+</ion-content>

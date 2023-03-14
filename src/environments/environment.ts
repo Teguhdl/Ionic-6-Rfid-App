@@ -4,13 +4,14 @@
 
 export const environment = {
   production: false,
-  domainProd: 'http://192.168.137.1/rfid-api/',
-  domainDev: 'http://192.168.137.1/rfid-api/',
+  domainProd: 'http://localhost/rfid-api/',
+  domainDev: 'http://localhost/rfid-api/',
   //domainLoc: 'http://192.168.150.32/rfid-api/',
-  domainLoc: 'http://192.168.137.1/rfid-api/',
+  domainLoc: 'http://localhost/rfid-api/',
   path: 'index.php/',
   auth: 'login',
   device: 'device',
+  register: 'register',
   publicKey: '',
   mqttServer: '',
   mqttPort: '',

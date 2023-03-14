@@ -56,10 +56,11 @@ export class ApiService {
     });
   }
   getData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/device`, {
+    return this.http.get(`${this.apiUrl}/perusahaan`, {
       headers: this.getHeaders(),
     });
   }
+
   async post(url: string, formData: any) {
     if (url === environment.auth) {
       try {
@@ -79,7 +80,7 @@ export class ApiService {
           .toPromise();
         return this.checkResponse(i);
       } catch (err) {
-        return err;
+        return this.errorResponse(err || {});
       }
     }
   }

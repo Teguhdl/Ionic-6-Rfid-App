@@ -1,82 +1,101 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Login </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <ion-row>
-        <div class="centerimg">
-          <ion-col col-4>
-            <img
-              src="https://adhivasindo.co.id/assets/personal/adhivasindo/assets/img/logo.png"
-              alt="logo"
-            />
-          </ion-col>
+  <div class="main_content">
+    <div class="content_name">
+      <ion-label slot="end"></ion-label>
+    </div>
+    <div class="sub_content">
+      <div class="centerimg">
+        <ion-col col-4>
+          <img class="img" src="../../assets/Adhikari-Icon.png" alt="logo" />
+        </ion-col>
+      </div>
+      <div class="welcome_content">
+        <ion-label class="label_big">Welcome back,</ion-label>
+        <ion-label class="label_small">sign in to Continue</ion-label>
+      </div>
+    </div>
+
+    <div class="content">
+      <form class="form" [formGroup]="loginForm">
+        <div>
+          <ion-label class="label_big">Sign in</ion-label>
         </div>
-      </ion-row>
-    </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-item class="item" fill="floating">
+              <ion-icon
+                class="icon"
+                slot="start"
+                name="person-outline"
+              ></ion-icon>
+              <ion-label position="stacked">Username</ion-label>
+              <ion-input
+                class="custom"
+                name="username"
+                placeholder="Masukkan Username Anda"
+                formControlName="username"
+                [clearInput]="true"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-    <form class="form" [formGroup]="loginForm">
-      <ion-row>
-        <ion-col>
-          <ion-item fill="solid">
-            <ion-label position="floating">Username</ion-label>
-            <ion-input
-              class="custom"
-              name="username"
-              placeholder="Enter text"
-              formControlName="username"
-            ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-item fill="solid">
-            <ion-label position="floating">Password</ion-label>
-            <ion-input
-              name="password"
-              type="password"
-              placeholder="Enter text"
-              formControlName="password"
-            ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" (click)="login()" expand="block"
-            >Login</ion-button
-          >
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="lastrow">
-        <ion-col>
-          <ion-button (click)="lupapassword()" expand="block" fill="outline"
-            >Lupa Password</ion-button
-          >
-        </ion-col>
-        <ion-col>
-          <ion-button (click)="register()" expand="block" fill="outline"
-            >Register</ion-button
-          >
-        </ion-col>
-      </ion-row>
-    </form>
-  </ion-card>
+        <ion-row>
+          <ion-col>
+            <ion-item class="item" fill="floating">
+              <ion-icon
+                class="icon"
+                slot="start"
+                name="lock-closed-outline"
+              ></ion-icon>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input
+                name="password"
+                type="password"
+                placeholder="Masukkan Password Anda"
+                formControlName="password"
+                [clearInput]="true"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-checkbox></ion-checkbox>
+            <ion-label class="label_remember">Remember me</ion-label>
+          </ion-col>
+          <ion-col class="tag_a">
+            <a
+              style="text-decoration: none"
+              href="https://www.google.com/search?q=forgotpassword"
+              >Forgot Password?</a
+            >
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button
+              class="submits"
+              type="submit"
+              (click)="login()"
+              [disabled]="!loginForm.valid"
+              expand="block"
+              >Sign in</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </form>
+      <div class="account">
+        <ion-label class="account_label">Don't have an account yet? </ion-label>
+      </div>
+      <div class="button_account">
+        <ion-button class="button_create" expand="block" fill="outline"
+          >Create Account</ion-button
+        >
+      </div>
+      <div class="account">
+        <ion-label class="account_label">Terms And Condition </ion-label>
+      </div>
+    </div>
+  </div>
 </ion-content>
-
-<ion-footer> </ion-footer>
-<!-- [(ngModel)]="loginForm.username" -->.
-<!--   [(ngModel)]="loginForm.password" -->

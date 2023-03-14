@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <div class="centerimg">
+          <ion-col col-4>
+            <img
+              src="https://adhivasindo.co.id/assets/personal/adhivasindo/assets/img/logo.png"
+              alt="logo"
+            />
+          </ion-col>
+        </div>
+      </ion-row>
+    </ion-card-content>
+
+    <div class="main_content">
+      <div class="register">
+        <ion-label>~Daftar Akun~</ion-label>
+      </div>
+      <form class="form" [formGroup]="registerForm">
+        <ion-row>
+          <ion-col>
+            <ion-item fill="solid">
+              <ion-label position="floating">Nama </ion-label>
+              <ion-input
+                class="custom"
+                name="nama"
+                placeholder="Enter text"
+                formControlName="nama"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item fill="solid">
+              <ion-label position="floating">Username</ion-label>
+              <ion-input
+                name="username"
+                type="text"
+                placeholder="Enter text"
+                formControlName="username"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item fill="solid">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input
+                name="password"
+                type="password"
+                placeholder="Enter text"
+                formControlName="password"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Perusahaan</ion-label>
+              <ion-select
+                interface="action-sheet"
+                placeholder="Pilih Perusahaan"
+                cancelText="Batal"
+                formControlName="perusahaan_id"
+              >
+                <ion-select-option
+                  *ngFor="let i of data_perusahaan"
+                  value="{{i.perusahaan_id}}"
+                  >{{i.nama_perusahaan}}</ion-select-option
+                >
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item fill="solid">
+              <ion-label position="floating">No. Rfid</ion-label>
+              <ion-input
+                name="rfid"
+                type="text"
+                placeholder="Enter text"
+                formControlName="rfid"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button
+              type="submit"
+              (click)="register()"
+              expand="block"
+              [disabled]="!registerForm.valid"
+              >Register</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+  </ion-card>
+</ion-content>

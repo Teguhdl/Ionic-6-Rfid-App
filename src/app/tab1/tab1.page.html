@@ -1,35 +1,66 @@
-<div class="main_content">
-  <ion-buttons slot="start" class="button_menu">
-    <ion-menu-button color="light"> </ion-menu-button>
-  </ion-buttons>
-  <div class="content_name">
-    <ion-label slot="end">Dashboard</ion-label>
-  </div>
-  <div class="sub_content">
-    <div class="user">
-      <ion-label class="label_big">Haiii,{{username}}</ion-label>
-      <ion-label class="label_small">Prodev Adhivasindo</ion-label>
+<ion-content>
+  <div class="main_content">
+    <ion-buttons slot="start" class="button_menu">
+      <ion-menu-button color="light"> </ion-menu-button>
+    </ion-buttons>
+    <div class="content_name">
+      <ion-label slot="end">Dashboard</ion-label>
     </div>
-    <ion-card class="card" *ngIf="groupcardadmin">
-      <ion-card-header>
-        <ion-card-title>Khusus Admin</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
+    <div class="sub_content">
+      <div class="user">
+        <ion-label class="label_big">Haiii,{{username}}</ion-label>
+        <ion-label class="label_small">Prodev Adhivasindo</ion-label>
+      </div>
+      <ion-row>
+        <ion-col>
+          <ion-card class="card" *ngIf="groupcardadmin">
+            <ion-card-header>
+              <ion-card-title>Khusus Admin</ion-card-title>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            </ion-card-header>
 
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more,
-        nothing less.
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title>Khusus user</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more,
-        nothing less.
-      </ion-card-content>
-    </ion-card>
+            <ion-card-content>
+              Here's a small text description for the card content. Nothing
+              more, nothing less.
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="card">
+            <ion-card-header>
+              <ion-card-title>Khusus user</ion-card-title>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              Here's a small text description for the card content. Nothing
+              more, nothing less.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card class="card_img" (click)="add()">
+            <img
+              (click)="add()"
+              class="add_img"
+              src="../../assets/icon/add-person.png"
+            />
+            <ion-label (click)="add()">Tambah User</ion-label>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card class="card_img">
+            <img class="add_img" src="../../assets/icon/absen.png" />
+            <ion-label>Data Absensi</ion-label>
+          </ion-card>
+        </ion-col>
+        <!-- <ion-col>
+          <ion-card class="card_img">
+            <img class="add_img" src="../../assets/icon/add-person.png" />
+            <ion-label>Add user</ion-label>
+          </ion-card>
+        </ion-col> -->
+      </ion-row>
+    </div>
   </div>
-</div>
+</ion-content>

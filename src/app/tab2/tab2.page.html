@@ -1,25 +1,39 @@
-<div class="main_content">
-  <ion-buttons slot="start" class="button_menu">
-    <ion-menu-button color="light"> </ion-menu-button>
-  </ion-buttons>
-  <div class="content_name">
-    <ion-label slot="end">Content</ion-label>
-  </div>
-  <div class="sub_content">
-    <div class="user">
-      <ion-label class="label_big">List Perusahaan</ion-label>
-      <ion-label class="label_small"></ion-label>
+<ion-content>
+  <div class="main_content">
+    <ion-buttons slot="start" class="button_menu">
+      <ion-menu-button color="light"> </ion-menu-button>
+    </ion-buttons>
+    <div class="content_name">
+      <ion-label slot="end">Content</ion-label>
     </div>
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-title>Khusus Admin</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
+    <div class="sub_content">
+      <div class="user">
+        <ion-label class="label_big">List Perusahaan</ion-label>
+        <ion-label class="label_small">& Device yang Digunakan</ion-label>
+      </div>
+      <ion-card class="card" *ngFor="let i of data_perusahaan2">
+        <ion-card-header>
+          <ion-card-title>{{i.nama_perusahaan}}</ion-card-title>
+          <ion-card-subtitle>{{i.serial_number}}</ion-card-subtitle>
+        </ion-card-header>
 
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more,
-        nothing less.
-      </ion-card-content>
-    </ion-card>
+        <ion-card-content>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Device Digunakan</ion-label>
+              </ion-item>
+              <div
+                class="ion-padding"
+                slot="content"
+                *ngFor="let i of data_device2"
+              >
+                {{i.device_id}}-{{i.serial_number}}
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
-</div>
+</ion-content>

@@ -1,7 +1,7 @@
 .main_content {
   position: relative;
   width: 100%;
-  max-height: 800px;
+  max-height: auto;
   .button_menu {
     position: absolute;
     top: 20px;
@@ -57,13 +57,14 @@
       }
     }
   }
+
   .content {
     width: 100%;
     padding: 10;
     ion-icon {
       position: relative;
       margin-bottom: 20px;
-      width: 25px ;
+      width: 25px;
     }
     ion-label {
       margin-top: 10px;

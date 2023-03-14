@@ -6,6 +6,7 @@ export const environment = {
   domainLoc: 'http://192.168.137.1/rfid-api/',
   path: 'index.php/',
   auth: 'login',
+  register: 'register',
   publicKey: '',
   mqttServer: '',
   mqttPort: '',

@@ -15,6 +15,7 @@ import { AlertController } from '@ionic/angular';
   providers: [Storage],
 })
 export class LoginPage implements OnInit {
+  showPassword = false;
   public loginForm: FormGroup;
   public decode: any;
   public errorMessage: any;
@@ -28,7 +29,7 @@ export class LoginPage implements OnInit {
     private alertController: AlertController
   ) {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(5)]],
+      username: ['', [Validators.required, Validators.minLength(4)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
@@ -49,7 +50,7 @@ export class LoginPage implements OnInit {
         message: 'Username & Password Salah Silahkan Coba Lagi',
         buttons: ['OK'],
       });
-      // this.router.navigate(['tabs'], { replaceUrl: true });
+      //this.router.navigate(['tabs'], { replaceUrl: true });
 
       await alert.present();
       this.router.navigate(['login'], { replaceUrl: true });
@@ -59,7 +60,6 @@ export class LoginPage implements OnInit {
       localStorage.setItem('username', JSON.stringify(this.decode.usn));
       localStorage.setItem('groupId', JSON.stringify(this.decode.ugi));
       localStorage.setItem('userId', JSON.stringify(this.decode.uid));
-      
 
       let username = localStorage.getItem('username');
       const alert = await this.alertController.create({
@@ -72,29 +72,5 @@ export class LoginPage implements OnInit {
       await alert.present();
       this.router.navigate(['tabs'], { replaceUrl: true });
     }
-  }
-  async lupapassword() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      //mode: 'ios',
-      subHeader: 'Belom Tersedia',
-      message: 'Untuk Saat Ini Belum Tersedia',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-    this.router.navigate(['login'], { replaceUrl: true });
-  }
-  async register() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      //mode: 'ios',
-      subHeader: 'Belom Tersedia',
-      message: 'Untuk Saat Ini Belum Tersedia',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-    this.router.navigate(['login'], { replaceUrl: true });
   }
 }
