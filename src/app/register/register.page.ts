@@ -38,7 +38,7 @@ export class RegisterPage implements OnInit {
   async ngOnInit() {
     const data_perusahaan = await this.api.get('perusahaan');
     this.data_perusahaan = data_perusahaan.message;
-    console.log(this.data_perusahaan);
+    //console.log(this.data_perusahaan);
   }
   async register() {
     const formData = new FormData();
@@ -49,7 +49,7 @@ export class RegisterPage implements OnInit {
     formData.append('rfid', this.registerForm.value.rfid);
 
     const response = await this.api.post(environment.register, formData);
-    console.log(response);
+    //console.log(response);
 
     if (response.message == null) {
       const alert = await this.alertController.create({

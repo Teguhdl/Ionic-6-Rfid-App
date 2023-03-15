@@ -15,31 +15,45 @@
         <ion-col>
           <ion-card class="card" *ngIf="groupcardadmin">
             <ion-card-header>
-              <ion-card-title>Khusus Admin</ion-card-title>
-              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+              <ion-card-title>Data Absensi Hari ini</ion-card-title>
+              <ion-card-subtitle>
+                Tanggal :<b>{{datenow()}}</b></ion-card-subtitle
+              >
             </ion-card-header>
-
-            <ion-card-content>
-              Here's a small text description for the card content. Nothing
-              more, nothing less.
+            <ion-card-content *ngFor="let i of count_absen">
+              Jumlah user yang sudah check in :<b>{{i.jmlh_user}}</b>
             </ion-card-content>
           </ion-card>
 
-          <ion-card class="card">
-            <ion-card-header>
-              <ion-card-title>Khusus user</ion-card-title>
-              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card class="card" *ngIf="groupcarduser">
+            <ion-card-header *ngFor="let i of absenId">
+              <ion-card-title>Data Absen Terakhir :</ion-card-title>
+              <ion-card-subtitle
+                ><b>Tanggal : {{i.tanggal}}</b></ion-card-subtitle
+              >
             </ion-card-header>
-            <ion-card-content>
-              Here's a small text description for the card content. Nothing
-              more, nothing less.
+            <ion-card-content *ngFor="let i of absenId">
+              <p class="p_content"><b>Waktu Check in : {{i.absen_masuk}}</b></p>
+              <p class="p_content">
+                <b>Waktu Check Out : {{i.absen_keluar}}</b>
+              </p>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-card class="card_img" (click)="add()">
+          <ion-card class="card_img" (click)="dataabsen()">
+            <img
+              (click)="dataabsen()"
+              class="add_img"
+              src="../../assets/icon/absen.png"
+            />
+            <ion-label>Data Absensi</ion-label>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card class="card_img" (click)="add()" *ngIf="groupcardadmin">
             <img
               (click)="add()"
               class="add_img"
@@ -48,12 +62,7 @@
             <ion-label (click)="add()">Tambah User</ion-label>
           </ion-card>
         </ion-col>
-        <ion-col>
-          <ion-card class="card_img">
-            <img class="add_img" src="../../assets/icon/absen.png" />
-            <ion-label>Data Absensi</ion-label>
-          </ion-card>
-        </ion-col>
+
         <!-- <ion-col>
           <ion-card class="card_img">
             <img class="add_img" src="../../assets/icon/add-person.png" />

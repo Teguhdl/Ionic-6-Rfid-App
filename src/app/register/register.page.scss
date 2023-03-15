@@ -1,19 +1,185 @@
-.centerimg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+.main_content {
+  position: relative;
+  width: 100%;
+  max-height: 800px;
+  .button_menu {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+  }
+  .content_name {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    ion-label {
+      color: linier-gradient(to left , white , blue);
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
 }
- .main_content{
-    padding: 20px;  
-    .register{
-        text-align: center;
-        justify-content: space-between;
-    ion-label{
-        text-transform: capitalize;
-        font-size: 20px;
-        font-weight: 500;
-        font-family: 'Times New Roman', Times, serif;
+
+.sub_content {
+  width: 100%;
+  background: linear-gradient(to right, #0c8ae3, #d3e5ed);
+  padding: 40px;
+  padding-top: 20px;
+  height: 260px;
+  justify-content: space-between;
+  border-bottom-right-radius: 75px;
+  border-bottom-left-radius: 75px;
+  margin-bottom: 30px;
+
+  .centerimg {
+    display: block;
+    text-align: center;
+    .img {
+      max-width: 50%;
     }
+  }
+
+  .welcome_content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .label_big {
+      color: white;
+      font-family: sans-serif;
+      font-size: 28px;
+      display: block;
+      font-weight: 250;
     }
- }
+    .label_small {
+      color: white;
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+
+  .card {
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: -30px;
+    background-color: #b6cde4;
+  }
+  .user {
+    width: 100%;
+    height: 120px;
+    padding-top: 80px;
+    justify-content: space-between;
+    .label_big {
+      color: white;
+      font-family: cursive;
+      font-size: 30px;
+      display: block;
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+    .label_small {
+      color: white;
+      font-size: 15px;
+      text-transform: capitalize;
+      font-weight: 300;
+    }
+    .user_img {
+      height: 100px;
+      width: 80px;
+      border: solid white;
+      box-shadow: inset;
+      border-radius: 20px;
+    }
+  }
+}
+.content {
+  margin: 20px;
+  .form {
+    max-width: 100%;
+    .label_big {
+      color: black;
+      font-size: 30px;
+      display: block;
+      // font-weight: 500;
+      text-align: center;
+      margin: 20px;
+    }
+    .item {
+      border: solid rgb(207, 205, 205);
+      border-radius: 10px;
+      margin: 7px;
+    }
+    .icon {
+      color: #64b4ec;
+    }
+    .label_remember {
+      color: rgb(159, 153, 153);
+      width: 100%;
+    }
+    .forget {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+    ion-checkbox {
+      margin-top: -10px;
+      margin-left: 5px;
+      --size: 20px;
+      --background-checked: #0c8ae3;
+    }
+
+    ion-checkbox::part(container) {
+      border-radius: 6px;
+      border: solid rgb(207, 205, 205);
+    }
+    .right-label {
+      right: 10px;
+      display: block;
+      text-align: right;
+    }
+    .tag_a {
+      max-width: 50% !important;
+      text-align: right;
+    }
+    .submits {
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background-color: linear-gradient(to right, #0c8ae3, #d3e5ed);
+      height: 50px;
+      text-decoration: none;
+      text-transform: none;
+      font-family: sans-serif;
+      font-weight: 350;
+      font-size: 20px;
+    }
+  }
+  .account {
+    color: rgb(159, 153, 153);
+    width: 100%;
+    text-align: center;
+    .account_label {
+      font-size: 18px;
+      font-weight: 200;
+      text-transform: none;
+    }
+  }
+  .button_account {
+    .button_create {
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 50px;
+      background-color: linear-gradient(to right, #0c8ae3, #d3e5ed);
+      height: 50px;
+      text-decoration: none;
+      text-transform: none;
+      font-family: sans-serif;
+      font-weight: 350;
+      font-size: 20px;
+    }
+  }
+}

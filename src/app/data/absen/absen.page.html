@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="main_content">
+    <ion-buttons slot="start" class="button_menu">
+      <ion-back-button defaultHref="/tabs/tab1" color="light">
+      </ion-back-button>
+    </ion-buttons>
+    <div class="content_name">
+      <ion-label slot="end">Data Absen</ion-label>
+    </div>
+    <div class="sub_content">
+      <div class="user">
+        <ion-label class="label_big">Data keseluruhan </ion-label>
+        <ion-label class="label_small">Absensi User</ion-label>
+      </div>
+      <ion-card class="card">
+        <div class="row header">
+          <ion-row>
+            <ion-col class="col">Tanggal </ion-col>
+            <ion-col class="col">UserId/ Nama</ion-col>
+            <ion-col class="col">Absen Masuk</ion-col>
+            <ion-col class="col">Absen Keluar</ion-col>
+          </ion-row>
+        </div>
+        <div class="row" *ngFor="let i of data_absen">
+          <ion-row>
+            <ion-col class="col">{{i.tanggal}}</ion-col>
+            <ion-col class="col">{{i.user_id}} - {{i.nama}}</ion-col>
+            <ion-col class="col">{{i.absen_masuk}}</ion-col>
+            <ion-col class="col">{{i.absen_keluar}}</ion-col>
+          </ion-row>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

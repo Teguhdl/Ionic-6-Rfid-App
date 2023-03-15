@@ -1,41 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Register </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <ion-row>
-        <div class="centerimg">
-          <ion-col col-4>
-            <img
-              src="https://adhivasindo.co.id/assets/personal/adhivasindo/assets/img/logo.png"
-              alt="logo"
-            />
-          </ion-col>
-        </div>
-      </ion-row>
-    </ion-card-content>
-
-    <div class="main_content">
-      <div class="register">
-        <ion-label>~Daftar Akun~</ion-label>
+  <div class="main_content">
+    <ion-buttons slot="start" class="button_menu">
+      <ion-back-button defaultHref="/tabs/tab1" color="light">
+      </ion-back-button>
+    </ion-buttons>
+    <div class="content_name">
+      <ion-label slot="end"></ion-label>
+    </div>
+    <div class="sub_content">
+      <div class="centerimg">
+        <ion-col col-4>
+          <img class="img" src="../../assets/Adhikari-Icon.png" alt="logo" />
+        </ion-col>
       </div>
+      <div class="welcome_content">
+        <ion-label class="label_big">Welcome,</ion-label>
+        <ion-label class="label_small">sign up for new user ?</ion-label>
+      </div>
+    </div>
+
+    <div class="content">
       <form class="form" [formGroup]="registerForm">
+        <div>
+          <ion-label class="label_big">Sign Up</ion-label>
+        </div>
         <ion-row>
           <ion-col>
-            <ion-item fill="solid">
-              <ion-label position="floating">Nama </ion-label>
+            <ion-item class="item" fill="floating">
+              <ion-icon
+                class="icon"
+                slot="start"
+                name="person-sharp"
+              ></ion-icon>
+              <ion-label position="stacked">Nama</ion-label>
               <ion-input
                 class="custom"
                 name="nama"
-                placeholder="Enter text"
+                placeholder="Masukkan Username Anda"
                 formControlName="nama"
+                [clearInput]="true"
               ></ion-input>
             </ion-item>
           </ion-col>
@@ -43,13 +46,19 @@
 
         <ion-row>
           <ion-col>
-            <ion-item fill="solid">
-              <ion-label position="floating">Username</ion-label>
+            <ion-item class="item" fill="floating">
+              <ion-icon
+                class="icon"
+                slot="start"
+                name="person-outline"
+              ></ion-icon>
+              <ion-label position="stacked">Username</ion-label>
               <ion-input
+                class="custom"
                 name="username"
-                type="text"
-                placeholder="Enter text"
+                placeholder="Masukkan Username Anda"
                 formControlName="username"
+                [clearInput]="true"
               ></ion-input>
             </ion-item>
           </ion-col>
@@ -57,21 +66,31 @@
 
         <ion-row>
           <ion-col>
-            <ion-item fill="solid">
-              <ion-label position="floating">Password</ion-label>
+            <ion-item class="item" fill="floating">
+              <ion-icon
+                class="icon"
+                slot="start"
+                name="lock-closed-outline"
+              ></ion-icon>
+              <ion-label position="stacked">Password</ion-label>
               <ion-input
                 name="password"
                 type="password"
-                placeholder="Enter text"
+                placeholder="Masukkan Password Anda"
                 formControlName="password"
+                [clearInput]="true"
               ></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
-
         <ion-row>
           <ion-col>
-            <ion-item>
+            <ion-item class="item" fill="floating">
+              <ion-icon
+                class="icon"
+                slot="start"
+                name="desktop-outline"
+              ></ion-icon>
               <ion-label position="floating">Perusahaan</ion-label>
               <ion-select
                 interface="action-sheet"
@@ -88,16 +107,17 @@
             </ion-item>
           </ion-col>
         </ion-row>
-
         <ion-row>
           <ion-col>
-            <ion-item fill="solid">
+            <ion-item class="item" fill="floating">
+              <ion-icon class="icon" slot="start" name="key-outline"></ion-icon>
               <ion-label position="floating">No. Rfid</ion-label>
               <ion-input
                 name="rfid"
                 type="text"
                 placeholder="Enter text"
                 formControlName="rfid"
+                [clearInput]="true"
               ></ion-input>
             </ion-item>
           </ion-col>
@@ -106,15 +126,19 @@
         <ion-row>
           <ion-col>
             <ion-button
+              class="submits"
               type="submit"
               (click)="register()"
-              expand="block"
               [disabled]="!registerForm.valid"
-              >Register</ion-button
+              expand="block"
+              >Sign Up</ion-button
             >
           </ion-col>
         </ion-row>
       </form>
+      <div class="account">
+        <ion-label class="account_label">Terms And Condition </ion-label>
+      </div>
     </div>
-  </ion-card>
+  </div>
 </ion-content>

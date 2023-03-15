@@ -1,23 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { ApiService } from '../service/api.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   providers: [Storage],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   result: string | undefined;
   username: any;
   groupid: any;
   userid: any;
   groupcardadmin: any;
+  groupcarduser: any;
+  count_absen: any;
+  absenId: any;
+
   constructor(
     private actionSheetCtrl: ActionSheetController,
     public router: Router,
-    private storage: Storage
+    private storage: Storage,
+    private api: ApiService,
+    public http: HttpClient
   ) {
     let username = localStorage.getItem('username');
     let userid = localStorage.getItem('userId');
@@ -27,14 +35,29 @@ export class Tab1Page {
     this.username = username?.replace(/"/g, '');
     this.groupid = groupid?.replace(/"/g, '');
     this.userid = userid?.replace(/"/g, '');
+    //console.log(this.userid);
 
     if (this.groupid == '0') {
       this.groupid = 'Admin';
       this.groupcardadmin = true;
+      this.groupcarduser = false;
     } else {
       this.groupid = 'User';
       this.groupcardadmin = false;
+      this.groupcarduser = true;
     }
+  }
+
+  async ngOnInit() {
+    const count_absen = await this.api.get('countabsen');
+    this.count_absen = count_absen.message;
+    //console.log(count_absen);
+
+    const formData = new FormData();
+    formData.append('user_id', this.userid);
+    const absenId = await this.api.post('dataabsens', formData);
+    this.absenId = absenId.message;
+    //console.log(absenId);
   }
 
   async presentActionSheet() {
@@ -70,5 +93,15 @@ export class Tab1Page {
 
   add() {
     this.router.navigate(['register'], { replaceUrl: true });
+  }
+  dataabsen() {
+    this.router.navigate(['absen'], { replaceUrl: true });
+  }
+  datenow() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    return year + '-' + month + '-' + day;
   }
 }
