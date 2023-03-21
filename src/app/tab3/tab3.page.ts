@@ -24,7 +24,7 @@ export class Tab3Page {
     let userid = localStorage.getItem('userId');
     let groupid = localStorage.getItem('groupId');
 
-    this.username = username?.replace(/"/g, '');
+    this.username = username
     this.groupid = groupid?.replace(/"/g, '');
     this.userid = userid?.replace(/"/g, '');
     //console.log(username);
@@ -64,5 +64,8 @@ export class Tab3Page {
     sessionStorage.clear();
     localStorage.clear(); // sekali semua kehapus
     this.router.navigate(['login'], { replaceUrl: true });
+  }
+  replace(s:string){
+    return s && s.replace(/"/g, '');
   }
 }

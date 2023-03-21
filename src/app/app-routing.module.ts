@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./tabs/tabs.module').then((m) => m.TabsPageModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   // {
   //   path: 'login',
@@ -42,6 +42,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./data/absen/absen.module').then((m) => m.AbsenPageModule),
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'rfid',
+    loadChildren: () =>
+      import('./rfid/rfid.module').then((m) => m.RfidPageModule),
   },
 ];
 @NgModule({

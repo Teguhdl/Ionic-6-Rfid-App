@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 import { CommonModule } from '@angular/common';
-import { Tab2PageModule } from "../app/tab2/tab2.module";
+import { Tab2PageModule } from '../app/tab2/tab2.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +22,7 @@ import { Tab2PageModule } from "../app/tab2/tab2.module";
     IonicStorageModule,
     HttpClientModule,
     CommonModule,
-    Tab2PageModule
+    Tab2PageModule,
   ],
   providers: [
     AuthService,

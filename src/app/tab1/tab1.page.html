@@ -20,8 +20,10 @@
                 Tanggal :<b>{{datenow()}}</b></ion-card-subtitle
               >
             </ion-card-header>
-            <ion-card-content *ngFor="let i of count_absen">
-              Jumlah user yang sudah check in :<b>{{i.jmlh_user}}</b>
+            <ion-card-content>
+              Jumlah user yang sudah check in :<b *ngFor="let i of count_absen"
+                >{{i.jmlh_user}}</b
+              >
             </ion-card-content>
           </ion-card>
 
@@ -38,6 +40,29 @@
                 <b>Waktu Check Out : {{i.absen_keluar}}</b>
               </p>
             </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card class="card_img" (click)="rfid()">
+            <img
+              (click)="rfid()"
+              class="add_img"
+              src="../../assets/icon/Rfid.png"
+            />
+            <img class="icon" src="../../assets/icon/centang.png" />
+            <ion-label>Rfid</ion-label>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card class="card_img" (click)="finger()" *ngIf="groupcardadmin">
+            <img
+              (click)="finger()"
+              class="add_img"
+              src="../../assets/icon/Finger.png"
+            />
+            <ion-label>Finger</ion-label>
           </ion-card>
         </ion-col>
       </ion-row>
@@ -62,13 +87,6 @@
             <ion-label (click)="add()">Tambah User</ion-label>
           </ion-card>
         </ion-col>
-
-        <!-- <ion-col>
-          <ion-card class="card_img">
-            <img class="add_img" src="../../assets/icon/add-person.png" />
-            <ion-label>Add user</ion-label>
-          </ion-card>
-        </ion-col> -->
       </ion-row>
     </div>
   </div>

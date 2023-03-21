@@ -1,0 +1,71 @@
+<ion-content>
+  <div class="main_content">
+    <ion-buttons slot="start" class="button_menu">
+      <ion-back-button defaultHref="/tabs/tab1" color="light">
+      </ion-back-button>
+    </ion-buttons>
+    <div class="content_name">
+      <ion-label slot="end">Scan QR Code</ion-label>
+    </div>
+    <div class="camera">
+      <div class="keterangan">
+        <ion-label></ion-label>
+      </div>
+      <ngx-scanner-qrcode
+        (event)="onEvent($event)"
+        [config]="config"
+        class="camera"
+        #action="scanner"
+        (error)="onError($event)"
+      ></ngx-scanner-qrcode>
+    </div>
+    <div class="costum-select">
+      <ion-select
+        interface="popover"
+        [ngModel]="null"
+        (ngModelChange)="action.playDevice($event)"
+        placeholder="Select Device"
+      >
+        <ion-select-option
+          style="width: 100%"
+          *ngFor="let c of action.devices.value; let i = index"
+        >
+          {{c.label}}
+        </ion-select-option>
+      </ion-select>
+    </div>
+    <div class="menu">
+      <!-- Loading -->
+      <p *ngIf="action.isLoading">⌛ Loading...</p>
+
+      <!-- start -->
+      <button
+        class="button_start"
+        (click)="action.isStart ? action.stop() : action.start()"
+      >
+        {{action.isStart ? 'Stop' : 'Start'}}
+      </button>
+    </div>
+
+    <div class="sub-content">
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title>Scan Qr Code</ion-card-title>
+          <ion-card-subtitle>{{datenow()}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p><b>Value Data Qr Code :</b></p>
+          <span *ngFor="let row of data" [innerHTML]="replace(row.value)"
+            ><b>{{ row.value | json }}</b></span
+          >
+          <!-- <span>{{ row.data}}</span> -->
+        </ion-card-content>
+        <ion-button (click)="Register()"
+          >Belum ada Data ? Register Disini</ion-button
+        >
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+<!-- For camera -->

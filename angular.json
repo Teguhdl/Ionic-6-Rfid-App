@@ -141,5 +141,18 @@
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
     }
+  },
+  "architect": {
+    "build": {
+      "options": {
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "node_modules/ngx-scanner-qrcode/wasm/",
+            "output": "./assets/wasm/"
+          }
+        ]
+      }
+    }
   }
 }

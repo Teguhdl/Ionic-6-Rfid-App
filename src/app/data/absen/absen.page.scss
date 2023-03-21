@@ -52,6 +52,17 @@
         border-radius: 20px;
       }
     }
+  }
+  .card {
+    display: absolute;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: inset;
+
     .header .col {
       font-size: 18px;
       background-color: rgb(7, 224, 25);
@@ -64,10 +75,8 @@
       font-size: 15px;
       border: solid 1px grey;
       border-bottom-style: none;
-      border-right-style: none;
       text-align: center;
       width: 100%;
-    
     }
 
     .col:last-child {
@@ -77,15 +86,5 @@
     .row:last-child .col {
       border-bottom: solid 2px grey;
     }
-  }
-  .card {
-    display: absolute;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: inset;
   }
 }

@@ -33,6 +33,7 @@
     "ionic": "^5.4.16",
     "ionicons": "^6.0.3",
     "jwt-decode": "^3.1.2",
+    "ngx-scanner-qrcode": "^1.2.6",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

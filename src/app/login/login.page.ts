@@ -46,14 +46,15 @@ export class LoginPage implements OnInit {
     if (response.message == null) {
       const alert = await this.alertController.create({
         header: 'Alert',
+        cssClass: 'my-alert',
         subHeader: 'Gagal Login',
         message: 'Username & Password Salah Silahkan Coba Lagi',
         buttons: ['OK'],
       });
-      //this.router.navigate(['tabs'], { replaceUrl: true });
+      this.router.navigate(['tabs'], { replaceUrl: true });
 
       await alert.present();
-      this.router.navigate(['login'], { replaceUrl: true });
+      // this.router.navigate(['login'], { replaceUrl: true });
     } else {
       this.decode = jwtDecode(response.message);
       localStorage.setItem('token', JSON.stringify(response.message));

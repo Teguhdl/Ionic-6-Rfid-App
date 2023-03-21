@@ -98,10 +98,41 @@ export class Tab1Page implements OnInit {
     this.router.navigate(['absen'], { replaceUrl: true });
   }
   datenow() {
+    var days = new Array(7);
+    days[0] = 'Minggu';
+    days[1] = 'Senin';
+    days[2] = 'Selasa';
+    days[3] = 'Rabu';
+    days[4] = 'Kamis';
+    days[5] = 'Jumat';
+    days[6] = 'Sabtu';
+    var months = new Array(11);
+    months[0] = 'Januari';
+    months[1] = 'Februari';
+    months[2] = 'Maret';
+    months[3] = 'April';
+    months[4] = 'Mei';
+    months[5] = 'Juni';
+    months[6] = 'Juli';
+    months[7] = 'Agustus';
+    months[8] = 'September';
+    months[9] = 'Oktober';
+    months[10] = 'November';
+    months[11] = 'Desember';
     const today = new Date();
     const year = today.getFullYear();
-    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const month = months[today.getMonth()];
     const day = today.getDate().toString().padStart(2, '0');
-    return year + '-' + month + '-' + day;
+    const nameday = days[today.getDay()];
+
+    return nameday + ', ' + day + ' ' + month + ' ' + year;
   }
+  replace(s: string) {
+    return s && s.replace(/"/g, '') && s.replace(/;/g, '<br>');
+  }
+
+  rfid() {
+    this.router.navigate(['rfid'], { replaceUrl: true });
+  }
+  finger() {}
 }

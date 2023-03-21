@@ -13,7 +13,10 @@
           <img src="../../assets/avatar.png" />
         </div>
         <div class="user_name">
-          <ion-label class="big_name">{{username}}</ion-label>
+          <ion-label
+            class="big_name"
+            [innerHTML]="replace(username)"
+          ></ion-label>
           <ion-label class="small_name">Magang Prodev</ion-label>
         </div>
       </div>

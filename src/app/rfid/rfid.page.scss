@@ -1,0 +1,78 @@
+.main_content {
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  .button_menu {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+  }
+  .content_name {
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    right: 20px;
+    ion-label {
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  .camera {
+    display: block;
+    max-width: 100% !important;
+    .keterangan {
+      position: absolute;
+      color: white;
+      font-size: 15px;
+      z-index: 1;
+      bottom: 250px;
+      margin-bottom: -10px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+  .button_start {
+    border-radius: 20%;
+    height: 60px;
+    width: 30%;
+    margin: 4px;
+    background-color: rgb(14, 234, 14);
+    color: white;
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+    &disabled {
+      cursor: no-drop;
+    }
+  }
+  .menu {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 3;
+  }
+  .costum-select {
+    font-family: Arial;
+    display: block;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    .costum-form {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.sub-content {
+  position: relative;
+  ion-button {
+    width: 96%;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}

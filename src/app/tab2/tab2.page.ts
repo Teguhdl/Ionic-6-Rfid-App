@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../service/api.service';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -49,6 +50,7 @@ export class Tab2Page implements OnInit {
 
     // const data_perusahaan = await this.apiService.get('perusahaan');
     // this.data_perusahaan = data_perusahaan.message;
+
     // console.log(this.data_device);
     // console.log(this.data_perusahaan);
 
@@ -68,7 +70,7 @@ export class Tab2Page implements OnInit {
     this.data_perusahaan2 = data_perusahaan2;
 
     console.log(data_device2);
-    console.log(data_perusahaan2);
+    console.log(this.data_perusahaan2);
 
     const combinedData: { [key: string]: number[] } = {};
     data_perusahaan2.forEach(
