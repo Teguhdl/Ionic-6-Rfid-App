@@ -29,6 +29,10 @@ This project was generated with Ionic CLI version 6.16.1 and Angular CLI version
   * Menu Profile,Content and Dashboard
   * Data attendance
   * QR Code scanner as user attandance.
+ 
+ ## Information
+   
+ * Backend using Codeigniter 3, For the code will be there **_In a Moment_**
 
  ## Further help
 
