@@ -27,7 +27,7 @@ This project was generated with Ionic CLI version 6.16.1 and Angular CLI version
  This app includes the following features:
   * Login and add user
   * Menu Profile,Content and Dashboard
-  * Data attendance user
+  * Data attendance
   * QR Code scanner as user attandance.
 
  ## Further help
